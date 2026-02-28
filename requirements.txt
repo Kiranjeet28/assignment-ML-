@@ -17,8 +17,12 @@ langchain-classic
 # Requires >= 0.26.0 for provider= support
 huggingface_hub>=0.26.0
 
+
 # Qwen2.5 requires transformers >= 4.37.0
 transformers>=4.37.0
+
+# Required for pandas to_markdown()
+tabulate
 
 # Environment & frontend
 python-dotenv
