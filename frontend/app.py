@@ -10,38 +10,10 @@ import socket
 import time
 
 
-API_URL = "http://localhost:8000/ask"
+API_URL = "https://assignment-ml.onrender.com/ask"
 
-# ── Backend auto-start logic ───────────────────────────────────────────────
-def is_backend_running(host="localhost", port=8000):
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-        sock.settimeout(1)
-        try:
-            sock.connect((host, port))
-            return True
-        except Exception:
-            return False
 
-def start_backend():
-    backend_path = os.path.join(os.path.dirname(__file__), "..", "backend", "main.py")
-    # Use sys.executable to ensure correct Python
-    return subprocess.Popen([
-        sys.executable, "-m", "uvicorn", f"backend.main:app",
-        "--host", "0.0.0.0", "--port", "8000"
-    ], cwd=os.path.join(os.path.dirname(__file__), ".."))
-
-# Start backend if not running
-if not is_backend_running():
-    st.info("Starting backend server...")
-    backend_proc = start_backend()
-    # Wait for backend to be ready
-    for _ in range(20):
-        if is_backend_running():
-            break
-        time.sleep(0.5)
-    else:
-        st.error("Backend server failed to start.")
-        st.stop()
+## Backend auto-start logic removed for production deployment.
 
 # Resolve dataset path relative to this file
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "titanic.csv")
