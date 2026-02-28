@@ -1,5 +1,4 @@
 .env
 .venv/
 venv/
-titanic.csv
 backend/__pycache__/
