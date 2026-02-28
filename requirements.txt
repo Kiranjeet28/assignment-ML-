@@ -1,0 +1,26 @@
+# Web framework
+fastapi
+uvicorn
+
+# Data
+pandas
+matplotlib
+
+# LangChain — pin to compatible set
+langchain
+langchain-core
+langchain-community
+langchain-experimental
+langchain-classic
+
+# HuggingFace — InferenceClient with Together AI provider
+# Requires >= 0.26.0 for provider= support
+huggingface_hub>=0.26.0
+
+# Qwen2.5 requires transformers >= 4.37.0
+transformers>=4.37.0
+
+# Environment & frontend
+python-dotenv
+streamlit>=1.27.0   # st.rerun() available from 1.27
+requests
